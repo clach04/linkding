@@ -36,7 +36,7 @@
                         <a href="{{ bookmark.web_archive_snapshot_url }}"
                            title="Show snapshot on web archive" target="{{ link_target }}" rel="noopener">
                         {% endif %}
-                        <span>{{ bookmark.date_added|humanize_relative_date }}</span>
+                        <span title="{{ bookmark.date_added }}">{{ bookmark.date_added|humanize_relative_date }}</span>
                         {% if bookmark.web_archive_snapshot_url %}
                         <span>∞</span>
                         </a>
@@ -50,7 +50,7 @@
                         <a href="{{ bookmark.web_archive_snapshot_url }}"
                            title="Show snapshot on web archive" target="{{ link_target }}" rel="noopener">
                         {% endif %}
-                        <span>{{ bookmark.date_added|humanize_absolute_date }}</span>
+                        <span title="{{ bookmark.date_added }}">{{ bookmark.date_added|humanize_absolute_date }}</span>
                         {% if bookmark.web_archive_snapshot_url %}
                         <span>∞</span>
                         </a>
@@ -70,6 +70,7 @@
                 <button type="submit" name="remove" value="{{ bookmark.id }}"
                    class="btn btn-link btn-sm btn-confirmation">Remove</button>
     <!-- 
+    TODO MOVE too close to remove/delete. Maybe move to start of line or Tags/Description or URL disaply line or Title line
     <span><div class="linkqrcode">
     -->
         <a href="#" onclick="showQrCode(this); return false;" class="qrcode" data-permalink="{{ bookmark.url }}">

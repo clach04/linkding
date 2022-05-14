@@ -122,6 +122,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+USE_L10N = False ## clach04 hack, hopefully force usage of SHORT_DATE_FORMAT https://docs.djangoproject.com/en/4.0/ref/settings/#date-format
+SHORT_DATE_FORMAT = 'Y-m-d'  ## clach04 hack
+DATE_FORMAT = 'Y-m-d'  ## clach04 hack
+DATETIME_FORMATS = '%Y-%m-%d %H:%M'  # clach04 hack not working for hover hack :-( https://docs.djangoproject.com/en/4.0/ref/settings/#datetime-format
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
